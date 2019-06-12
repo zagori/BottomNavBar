@@ -1,0 +1,11 @@
+<resources>
+
+    <!--Components-->
+
+    <!--Bottom Sheets-->
+    <!--Navigation Drawer-->
+
+    <!--Toolbar-->
+    <style name="Widget.MyTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary"/>
+
+</resources>
