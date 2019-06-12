@@ -24,6 +24,7 @@
 
         <!--Component styles-->
         <item name="toolbarStyle">@style/Widget.MyTheme.Toolbar</item>
+        <!--<item name="bottomNavigationStyle">@style/Widget.MyTheme.BottomNavigation</item>-->
     </style>
 
     <style name="Base.Zagori" parent="Theme.MaterialComponents.DayNight.NoActionBar">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,20 +14,32 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/title_home" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.zagori.custombottomnavigation.CustomBottomNavigation
         android:id="@+id/nav_view"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_gravity="bottom"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:itemIconTint="@drawable/bottom_nav_text_state"
+        app:itemTextColor="@drawable/bottom_nav_text_state"
+        app:cbn_background_color="@color/colorSurface"
+        app:cradle_vertical_offset="0dp"
+        app:fab_cradle_margin="8dp"
+        app:fab_cradle_rounded_corner_radius="8dp"
+        app:fab_size="50dp"
+        app:menu="@menu/bottom_nav_menu"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dashboard_black_24dp"
+        app:elevation="16dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/nav_view"
+        app:layout_anchorGravity="fill_vertical|center_horizontal" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
