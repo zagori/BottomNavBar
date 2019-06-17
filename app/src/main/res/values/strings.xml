@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FabBotNav</string>
     <string name="title_home">Home</string>
+    <string name="title_payment">Payment</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_new_cart">New Cart</string>
 </resources>
