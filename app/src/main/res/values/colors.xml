@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>-->
 
     <!--Color-->
 
@@ -40,4 +38,9 @@
     <color name="colorOnBackground">#000000</color>
     <color name="colorOnSurface">#000000</color>
     <color name="colorOnError">#ffffff</color>
+
+    <color name="colorBottomNav">#018786</color>
+    <color name="colorBottomNavItemChecked">#ffffff</color>
+    <color name="colorBottomNavItemUnchecked">#4dffffff</color>
+
 </resources>

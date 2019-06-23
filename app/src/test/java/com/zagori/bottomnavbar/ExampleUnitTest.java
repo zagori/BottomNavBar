@@ -1,4 +1,4 @@
-package com.zagori.custombottomnavigation;
+package com.zagori.bottomnavbar;
 
 import org.junit.Test;
 

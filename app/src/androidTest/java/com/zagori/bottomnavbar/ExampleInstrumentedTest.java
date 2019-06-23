@@ -1,4 +1,4 @@
-package com.zagori.custombottomnavigation;
+package com.zagori.bottomnavbar;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;

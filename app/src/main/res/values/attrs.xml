@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomBottomNavigation">
-        <attr name="bn_fab_margin" format="dimension"/>
-        <attr name="bn_rounded_corner_radius" format="dimension"/>
-        <attr name="fab_menu_item_index" format="integer"/>
-        <attr name="bn_fab_size" format="dimension"/>
-        <attr name="bn_cradle_vertical_offset" format="dimension"/>
+    <declare-styleable name="BottomNavBar">
         <attr name="bn_background_color" format="integer"/>
+        <attr name="bn_item_color" format="color"/>
         <attr name="bn_menu" format="integer"/>
+
+        <attr name="bn_curve_rounded_corner_radius" format="dimension"/>
+        <attr name="bn_curve_margin" format="dimension"/>
+        <attr name="bn_curve_vertical_offset" format="dimension"/>
+
+        <attr name="bn_fab_size" format="string"/>
         <attr name="bn_fab_menu_index" format="integer"/>
+        <attr name="bn_fab_background_color" format="integer"/>
+        <attr name="bn_fab_icon_color" format="color"/>
+
     </declare-styleable>
 </resources>

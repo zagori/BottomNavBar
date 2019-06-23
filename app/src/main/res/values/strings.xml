@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FabBotNav</string>
+    <string name="app_name">BottomNavBar</string>
     <string name="title_home">Home</string>
     <string name="title_payment">Payment</string>
     <string name="title_dashboard">Dashboard</string>

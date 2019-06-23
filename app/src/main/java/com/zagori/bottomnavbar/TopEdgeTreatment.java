@@ -1,6 +1,4 @@
-package com.zagori.custombottomnavigation;
-
-import android.util.Log;
+package com.zagori.bottomnavbar;
 
 import com.google.android.material.shape.EdgeTreatment;
 import com.google.android.material.shape.ShapePath;

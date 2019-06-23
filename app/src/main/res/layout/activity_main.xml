@@ -12,27 +12,29 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/title_home" />
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/title_home"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
 
-    <com.zagori.custombottomnavigation.BottomNav
+    <com.zagori.bottomnavbar.BottomNavBar
+        android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
 
-        app:bn_background_color="@color/colorSecondary"
+        app:bn_background_color="@color/colorBottomNav"
+        app:bn_item_color="@drawable/bottom_nav_item_state"
         app:bn_menu="@menu/bottom_nav_menu"
+
+        app:bn_curve_vertical_offset="0dp"
+        app:bn_curve_margin="6dp"
+        app:bn_curve_rounded_corner_radius="8dp"
+
+        app:bn_fab_size="normal"
         app:bn_fab_menu_index="2"
-
-        app:bn_cradle_vertical_offset="0dp"
-        app:bn_fab_margin="8dp"
-        app:bn_rounded_corner_radius="8dp"
-        app:bn_fab_size="50dp"/>
-
-    <!--
-    app:itemIconTint="@drawable/bottom_nav_text_state"
-    app:itemTextColor="@drawable/bottom_nav_text_state"
-    -->
+        app:bn_fab_background_color="@color/colorPrimary"
+        app:bn_fab_icon_color="@color/colorOnPrimary"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

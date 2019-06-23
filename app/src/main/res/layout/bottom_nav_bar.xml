@@ -9,9 +9,8 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fabSize="normal"
         app:layout_anchor="@id/nav_view"
-        app:elevation="9dp"/>
+        app:elevation="9dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
