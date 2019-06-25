@@ -27,7 +27,7 @@ dependencies {
 
 
 # ScreenShots
-<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-093459.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-094324.png" width="250">
+<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-093459.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-094324.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/bottomnavbar_attributes.png" width="250">
 
 
 # Usage
@@ -59,15 +59,45 @@ The fill color of bar. If not set, background will inherit default color from th
 
 
 #### bn_item_color
-The color of the menu items in the bar. It accept static resource color or ColorStateList(drawable selector) with `state_checked` is either `true` or `false`.
+The color of the menu items in the bar. It accept static resource color or ColorStateList(drawable selector) with `state_checked` is either `true` or `false`. Here is an example:
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_checked="true"
+        android:color="@color/colorBottomNavItemChecked" />
+    <item
+        android:state_checked="false"
+        android:color="@color/colorBottomNavItemUnchecked" />
+</selector>
+```
 
 
 #### bn_menu
-The menu resource, defining between 3 and 5 menu items.
+The menu resource, defining between 3 and 5 menu items. Here is an example:
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_payment"
+        android:icon="@drawable/ic_credit_card_black_24dp"
+        android:title="@string/title_payment" />
+
+    <item
+        android:id="@+id/navigation_new_cart"
+        android:icon="@drawable/ic_add_shopping_cart_black_24dp"
+        android:title="@string/title_new_cart" />
+</menu>
+```
 
 
 #### bn_curve_vertical_offset
-The vertical offset, in pixels, of the FloatingActionButton being cradled. An offset of 0 indicates the vertical center of the FloatingActionButton is positioned on the top edge. This can must be positive.
+The vertical offset, in pixels, of the FloatingActionButton being cradled. An offset of 0 indicates the vertical center of the FloatingActionButton is positioned on the top edge. This must be positive.
 
 
 #### bn_curve_margin
@@ -79,11 +109,11 @@ The radius, in pixels, of the rounded corners created by the cutout. A value of 
 
 
 #### bn_fab_size
-The FloatingActionButton size. I can be either `normal` or `mini`. If it's not set, it receives `normal` by default.
+The FloatingActionButton size. It can be either `normal` or `mini`. If it's not set, it receives `normal` by default. The size of `mini` is 40dp, and 56dp for `normal`.
 
 
 #### bn_fab_menu_index
-The position of the FloatingActionButton in the BottomNavigationView menu. The value of this index can be between `0` and 'menu size - 1'.
+The position of the FloatingActionButton in the BottomNavigationView menu. The value of this index can be between `0` and `menu size - 1`.
 
 
 #### bn_fab_background_color
