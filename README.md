@@ -11,7 +11,7 @@ BottomNavBar is a library that merges BottomNavigationView and FloatingActionBut
 allprojects {
 	repositories {
 		//...
-		maven { url 'https://jitpack.io' }
+		jCenter()
 	}
 }
 ```
