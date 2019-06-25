@@ -15,6 +15,8 @@ allprojects {
 	}
 }
 ```
+
+
 #### Step 2: add this dependency to your app build.gradle file
 ```gradle
 dependencies {
@@ -22,6 +24,12 @@ dependencies {
   implementation 'com.zagori:bottomnavbar:latest-release'
 }
 ```
+
+
+# ScreenShots
+
+
+
 # Usage
 #### XML Overview
 ```XML
@@ -45,36 +53,50 @@ dependencies {
         app:bn_fab_icon_color="@color/colorOnPrimary"/>
 ```
 
-#### XML Attributes
+
 #### bn_background_color
 The fill color of bar. If not set, background will inherit default color from the theme.
+
 
 #### bn_item_color
 The color of the menu items in the bar. It accept static resource color or ColorStateList(drawable selector) with `state_checked` is either `true` or `false`.
 
+
 #### bn_menu
 The menu resource, defining between 3 and 5 menu items.
+
 
 #### bn_curve_vertical_offset
 The vertical offset, in pixels, of the FloatingActionButton being cradled. An offset of 0 indicates the vertical center of the FloatingActionButton is positioned on the top edge. This can must be positive.
 
+
 #### bn_curve_margin
 The margin in pixels between the cutout and the fab.
+
 
 #### bn_curve_rounded_corner_radius
 The radius, in pixels, of the rounded corners created by the cutout. A value of 0 will produce a sharp cutout.
 
+
 #### bn_fab_size
 The FloatingActionButton size. I can be either `normal` or `mini`. If it's not set, it receives `normal` by default.
+
 
 #### bn_fab_menu_index
 The position of the FloatingActionButton in the BottomNavigationView menu. The value of this index can be between `0` and 'menu size - 1'.
 
+
 #### bn_fab_background_color
 The FloatingActionButton background tint.
 
+
 #### bn_fab_icon_color
 The color of the icon in the FloatingActionButton.
+
+
+# Developer
+* [LinkedIn](https://www.linkedin.com/in/yousseflabihi/).
+* [Twitter](https://twitter.com/yourizagori).
 
 
 # Code Contributions
