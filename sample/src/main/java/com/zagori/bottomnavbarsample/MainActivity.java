@@ -1,10 +1,12 @@
-package com.zagori.bottomnavbar;
+package com.zagori.bottomnavbarsample;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.zagori.bottomnavbar.BottomNavBar;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
