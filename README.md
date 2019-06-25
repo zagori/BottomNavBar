@@ -27,7 +27,7 @@ dependencies {
 
 
 # ScreenShots
-
+<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-093459.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-094324.png" width="250">
 
 
 # Usage
