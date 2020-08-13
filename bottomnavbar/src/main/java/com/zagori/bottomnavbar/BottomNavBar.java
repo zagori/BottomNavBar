@@ -16,6 +16,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
@@ -23,7 +24,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
-import com.zagori.bottomnavbar.R;
 
 
 public class BottomNavBar extends CoordinatorLayout {
@@ -149,14 +149,13 @@ public class BottomNavBar extends CoordinatorLayout {
         topEdgeTreatment.setFabDiameter(fabDiameter);
 
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
-        ShapeAppearanceModel shapeAppearanceModel = materialShapeDrawable.getShapeAppearanceModel();
-        shapeAppearanceModel.setTopEdge(topEdgeTreatment);
+        ShapeAppearanceModel shapeAppearanceModel = materialShapeDrawable.getShapeAppearanceModel()
+                .toBuilder().setTopEdge(topEdgeTreatment).build();
 
         materialShapeDrawable.setTint(backgroundColor);
         materialShapeDrawable.setShapeAppearanceModel(shapeAppearanceModel);
 
-        //setBackground(materialShapeDrawable);
-        bottomNavigationView.setBackground(materialShapeDrawable);
+        ViewCompat.setBackground(bottomNavigationView, materialShapeDrawable);
 
         // get the icon from menu item and set it to the fab
         fab.setImageDrawable(bottomNavigationView.getMenu().getItem(fabMenuIndex).getIcon());
