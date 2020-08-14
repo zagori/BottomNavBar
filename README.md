@@ -1,7 +1,7 @@
 # Overview
 BottomNavBar is a library that merges BottomNavigationView and FloatingActionButton into a single view. This library allows to replace one menuItem in the bottomNavigationView with a FloatingActionButton.
 
-<a href="https://bintray.com/zagori/maven/com.zagori:bottomnavbar/1.0.0/link"><img src="https://api.bintray.com/packages/zagori/maven/com.zagori:bottomnavbar/images/download.svg?version=1.0.0"/></a>
+<a href="https://bintray.com/zagori/maven/com.zagori:bottomnavbar/1.0.2/link"><img src="https://api.bintray.com/packages/zagori/maven/com.zagori:bottomnavbar/images/download.svg?version=1.0.2"/></a>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
