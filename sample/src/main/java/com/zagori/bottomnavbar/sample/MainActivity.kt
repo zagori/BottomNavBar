@@ -1,4 +1,4 @@
-package com.zagori.bottomnavbarsample
+package com.zagori.bottomnavbar.sample
 
 import android.os.Bundle
 import android.view.MenuItem

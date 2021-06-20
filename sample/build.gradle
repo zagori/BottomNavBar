@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.zagori.bottomnavbarsample"
+        applicationId "com.zagori.bottomnavbar.sample"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
