@@ -8,41 +8,39 @@ import com.zagori.bottomnavbar.BottomNavBar
 import com.zagori.bottomnavbar.BottomNavBar.OnBottomNavigationListener
 
 class MainActivity : AppCompatActivity() {
-    private var mTextMessage: TextView? = null
-    private val mOnBottomNavItemSelectedListener: OnBottomNavigationListener =
-        object : OnBottomNavigationListener {
-            override fun onNavigationItemSelected(menuItem: MenuItem?): Boolean {
-                when (menuItem!!.itemId) {
-                    R.id.navigation_home -> {
-                        mTextMessage!!.setText(R.string.title_home)
-                        return true
-                    }
-                    R.id.navigation_payment -> {
-                        mTextMessage!!.setText(R.string.title_payment)
-                        return true
-                    }
-                    R.id.navigation_new_cart -> {
-                        mTextMessage!!.setText(R.string.title_new_cart)
-                        return true
-                    }
-                    R.id.navigation_dashboard -> {
-                        mTextMessage!!.setText(R.string.title_dashboard)
-                        return true
-                    }
-                    R.id.navigation_notifications -> {
-                        mTextMessage!!.setText(R.string.title_notifications)
-                        return true
-                    }
-                }
-                return false
-            }
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mTextMessage = findViewById(R.id.message)
+        val textMessage: TextView = findViewById(R.id.message)
         val bottomNavView = findViewById<BottomNavBar>(R.id.bottom_nav_view)
-        bottomNavView.setBottomNavigationListener(mOnBottomNavItemSelectedListener)
+
+        bottomNavView.setBottomNavigationListener(object: OnBottomNavigationListener{
+            override fun onNavigationItemSelected(menuItem: MenuItem?): Boolean {
+                return when (menuItem!!.itemId) {
+                    R.id.navigation_home -> {
+                        textMessage.setText(R.string.title_home)
+                        true
+                    }
+                    R.id.navigation_payment -> {
+                        textMessage.setText(R.string.title_payment)
+                        true
+                    }
+                    R.id.navigation_new_cart -> {
+                        textMessage.setText(R.string.title_new_cart)
+                        true
+                    }
+                    R.id.navigation_dashboard -> {
+                        textMessage.setText(R.string.title_dashboard)
+                        true
+                    }
+                    R.id.navigation_notifications -> {
+                        textMessage.setText(R.string.title_notifications)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        })
     }
 }
