@@ -23,7 +23,9 @@ plugins {
 allprojects {
     repositories {
         google()
-        mavenCentral()
+        mavenCentral() // required for latest version of bottomnavbar (1.0.3)
+
+        //jcenter() // use this if you would like to use older version of bottomnavbar
     }
 }
 

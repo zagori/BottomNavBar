@@ -23,14 +23,16 @@ android {
 }
 
 dependencies {
-    implementation project(':bottomnavbar')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.4.0-alpha02'
     implementation 'com.google.android.material:material:1.4.0-rc01'
     implementation 'androidx.vectordrawable:vectordrawable:1.2.0-alpha02'
     implementation "androidx.core:core-ktx:1.5.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
+
+    // from mavenCentral (recommended)
+    implementation "io.github.zagori:bottomnavbar:1.0.3"
+
+    // from jCentral (older versions)
+    //implementation "com.zagori:bottomnavbar:1.0.2"
 }
