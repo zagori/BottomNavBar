@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -35,4 +34,13 @@ dependencies {
 repositories {
     mavenCentral()
 }
-//endregion
+
+
+ext {
+    // Provide your own coordinates here
+    PUBLISH_GROUP_ID = 'io.github.zagori'
+    PUBLISH_VERSION = '1.0.3'
+    PUBLISH_ARTIFACT_ID = 'bottomnavbar'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
