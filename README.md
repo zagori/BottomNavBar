@@ -1,11 +1,31 @@
 # Overview
 BottomNavBar is a library that merges BottomNavigationView and FloatingActionButton into a single view. This library allows to replace one menuItem in the bottomNavigationView with a FloatingActionButton.
 
-<a href="https://bintray.com/zagori/maven/com.zagori:bottomnavbar/1.0.2/link"><img src="https://api.bintray.com/packages/zagori/maven/com.zagori:bottomnavbar/images/download.svg?version=1.0.2"/></a>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+# Setup for MavenCentral (recommended)
+#### Step 1: Add mavenCentral to your project build.gralde file
+```gradle
+allprojects {
+	repositories {
+		//...
+		mavenCentral()
+	}
+}
+```
 
-# Setup
+
+#### Step 2: add this dependency to your app build.gradle file
+```gradle
+dependencies {
+  //...
+  implementation "io.github.zagori:bottomnavbar:1.0.3"
+}
+```
+
+
+
+# Setup for jCenter
 #### Step 1: Add jCenter to your project build.gralde file
 ```gradle
 allprojects {
@@ -21,13 +41,13 @@ allprojects {
 ```gradle
 dependencies {
   //...
-  implementation 'com.zagori:bottomnavbar:latest-release'
+  implementation 'com.zagori:bottomnavbar:1.0.2'
 }
 ```
 
 
 # ScreenShots
-<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-093459.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-094324.png" width="250">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/bottomnavbar_attributes.png" width="250">
+<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-093459.png" width="200">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/Screenshot_20190625-094324.png" width="200">	<img src="https://github.com/zagori/BottomNavBar/blob/master/images/bottomnavbar_attributes.png" width="200">
 
 
 # Usage
