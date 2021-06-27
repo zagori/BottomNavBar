@@ -19,6 +19,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    lintOptions {
+        disable 'ContentDescription'
+    }
 }
 
 dependencies {
