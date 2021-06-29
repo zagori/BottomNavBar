@@ -53,7 +53,10 @@ class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(c
             styleAttrs.getDimension(R.styleable.BottomNavBar_bn_curve_rounded_corner_radius, 0f)
         val cradleVerticalOffset =
             styleAttrs.getDimension(R.styleable.BottomNavBar_bn_curve_vertical_offset, 0f)
-        @ColorInt val backgroundColor = styleAttrs.getColor(R.styleable.BottomNavBar_bn_background_color, binding.navView.solidColor)
+        @ColorInt val backgroundColor = styleAttrs.getColor(
+            R.styleable.BottomNavBar_bn_background_color,
+            binding.navView.solidColor
+        )
         @IdRes val menuResID = styleAttrs.getResourceId(R.styleable.BottomNavBar_bn_menu, -1)
         val fabMenuIndex = styleAttrs.getInt(R.styleable.BottomNavBar_bn_fab_menu_index, -1)
         val menuItemColorState =
@@ -89,12 +92,9 @@ class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(c
             itemTextColor = menuItemColorState
 
             // set listener
-            setOnNavigationItemSelectedListener { item ->
-                onBottomNavigationListener != null && onBottomNavigationListener!!.onNavigationItemSelected(
-                    item
-                )
+            setOnItemSelectedListener { item ->
+                onBottomNavigationListener?.onNavigationItemSelected(item) ?: false
             }
-
         }
 
         // set listener on the fab
