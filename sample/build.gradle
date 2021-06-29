@@ -30,8 +30,11 @@ dependencies {
     implementation "androidx.core:core-ktx:1.5.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // from local module
+    implementation project(':bottomnavbar')
+
     // from mavenCentral (recommended)
-    implementation "io.github.zagori:bottomnavbar:1.0.3"
+    //implementation "io.github.zagori:bottomnavbar:1.0.3"
 
     // from jCentral (older versions)
     //implementation "com.zagori:bottomnavbar:1.0.2"
