@@ -6,15 +6,14 @@ import android.content.res.Resources.NotFoundException
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.ViewTreeObserver.OnGlobalLayoutListener
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.zagori.bottomnavbar.databinding.BottomNavBarBinding
 
-class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(context, attrs) {
+class BottomNavBar(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
     private val binding by lazy { BottomNavBarBinding.inflate(LayoutInflater.from(getContext())) }
     private var onBottomNavigationListener: OnBottomNavigationListener? = null
 
@@ -64,22 +63,18 @@ class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(c
 
         try {
             menuResID = attributes.getResourceId(R.styleable.BottomNavBar_bn_menu, -1)
-            menuItemColorState =
-                attributes.getColorStateList(R.styleable.BottomNavBar_bn_item_color)
+            menuItemColorState = attributes.getColorStateList(R.styleable.BottomNavBar_bn_item_color)
             navBackgroundColor = attributes.getColor(
                 R.styleable.BottomNavBar_bn_background_color,
                 binding.navView.solidColor
             )
 
             curveMargin = attributes.getDimension(R.styleable.BottomNavBar_bn_curve_margin, 0f)
-            roundedCornerRadius =
-                attributes.getDimension(R.styleable.BottomNavBar_bn_curve_rounded_corner_radius, 0f)
-            cradleVerticalOffset =
-                attributes.getDimension(R.styleable.BottomNavBar_bn_curve_vertical_offset, 0f)
+            roundedCornerRadius = attributes.getDimension(R.styleable.BottomNavBar_bn_curve_rounded_corner_radius, 0f)
+            cradleVerticalOffset = attributes.getDimension(R.styleable.BottomNavBar_bn_curve_vertical_offset, 0f)
 
             fabMenuIndex = attributes.getInt(R.styleable.BottomNavBar_bn_fab_menu_index, 0)
-            fabBackgroundColor =
-                attributes.getColorStateList(R.styleable.BottomNavBar_bn_fab_background_color)
+            fabBackgroundColor = attributes.getColorStateList(R.styleable.BottomNavBar_bn_fab_background_color)
             fabIconColor = attributes.getColorStateList(R.styleable.BottomNavBar_bn_fab_icon_color)
             bnFabSize = attributes.getInt(R.styleable.BottomNavBar_bn_fab_size, -1)
         } finally {
@@ -91,9 +86,7 @@ class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(c
         super.onAttachedToWindow()
 
         // check if no menu has been added
-        if (menuResID == -1){
-            throw NotFoundException("Menu must be added to BottomNav. menuResID should not be null.")
-        }
+        if (menuResID == -1) throw NotFoundException("Menu must be added to BottomNav. menuResID should not be null.")
 
         // add the menu to the bottom-nav
         binding.navView.apply {
@@ -143,29 +136,22 @@ class BottomNavBar(context: Context, attrs: AttributeSet?) : CoordinatorLayout(c
 
         // remove the icon from the item in the bottom-nav
         binding.navView.menu.getItem(fabMenuIndex).icon = null
+    }
 
-        // get an instance of the 1st menu item
-        val bottomNavigationItemView = (binding.navView.getChildAt(0)
-                as BottomNavigationMenuView).getChildAt(1) as BottomNavigationItemView
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
 
-        binding.navView.viewTreeObserver.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
+        val navItemView = (binding.navView.getChildAt(0) as BottomNavigationMenuView)
+            .getChildAt(1) as BottomNavigationItemView
 
-                // kill the global layout listener so it does not keep calling the layout
-                bottomNavigationItemView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+        // calculate the distance between the fab center and the bottom_nav's left edge
+        val fabMarginLeft = fabMenuIndex * navItemView.measuredWidth + navItemView.measuredWidth / 2 - binding.fab.measuredWidth / 2
 
-                // calculate the distance between the fab center and the bottom_nav's left edge
-                val fabMarginLeft =
-                    fabMenuIndex * bottomNavigationItemView.measuredWidth + bottomNavigationItemView.measuredWidth / 2 - binding.fab.measuredWidth / 2
+        // set the fab margins
+        (binding.fab.layoutParams as MarginLayoutParams).setMargins(fabMarginLeft, 0, 0, 0)
 
-                // set the fab margins
-                (binding.fab.layoutParams as MarginLayoutParams).setMargins(fabMarginLeft, 0, 0, 0)
-
-                // apply changes and initial the fab view
-                binding.fab.requestLayout()
-            }
-        })
-
-        invalidate()
+        // apply changes and initial the fab view
+        binding.fab.invalidate()
+        binding.fab.requestLayout()
     }
 }
